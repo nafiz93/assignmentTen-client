@@ -8,9 +8,8 @@ const Home = () => {
       className="h-screen w-full bg-cover bg-center bg-no-repeat"
     >
         <div className="absolute h-full inset-0 bg-black/20"></div>
-      <h3 className="text-white text-3xl font-bold p-10">
-        this is the welcome page
-      </h3>
+      
+      
     </div>
   );
 };

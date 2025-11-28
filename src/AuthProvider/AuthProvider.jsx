@@ -13,6 +13,7 @@ import { useEffect, useState } from "react";
 import { AuthContext } from "../authcontext/AuthContext";
 import { auth } from "../firebase/firebase.init";
 
+
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
