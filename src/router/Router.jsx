@@ -6,10 +6,11 @@ import Home from '../outlet_Pages/Home';
 import Supplies from '../outlet_Pages/Supplies';
 import Login from '../outlet_Pages/Login';
 import Listing from '../outlet_Pages/Listing';
-import Order from '../outlet_Pages/Order';
 import Registration from '../outlet_Pages/Registration';
 import Details from '../outlet_Pages/Details';
 import Privateroute from '../outlet_Pages/Privateroute';
+import Myorder from '../outlet_Pages/Myorder';
+import Mylisting from '../outlet_Pages/Mylisting';
 
 
 export const router = createBrowserRouter([
@@ -33,8 +34,12 @@ export const router = createBrowserRouter([
         element: <Listing></Listing>,
       },
       {
-        path: "/order",
-        element: <Order></Order>,
+        path: "/myorder",
+        element: <Myorder></Myorder>
+      },
+      {
+        path: "/mylist",
+        element: <Mylisting></Mylisting>
       },
       {
         path: "/login",

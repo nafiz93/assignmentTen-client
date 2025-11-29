@@ -1,0 +1,15 @@
+/* Completely break dialog's stacking context */
+dialog::backdrop {
+  z-index: 1 !important;
+}
+
+dialog {
+  z-index: 2 !important;
+  position: fixed !important; /* important! */
+}
+
+/* Put SweetAlert above everything */
+.swal2-container {
+  z-index: 999999 !important;
+  position: fixed !important;
+}

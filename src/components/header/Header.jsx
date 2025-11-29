@@ -65,7 +65,7 @@ const Header = () => {
           </NavLink>
           <NavLink
             className="mr-4"
-            to="/order"
+            to="/myorder"
             style={({ isActive }) => ({
               color: isActive ? "orange" : "black",
               fontWeight: "600",
@@ -73,6 +73,17 @@ const Header = () => {
             })}
           >
             My Orders
+          </NavLink>
+          <NavLink
+            className="mr-4"
+            to="/mylist"
+            style={({ isActive }) => ({
+              color: isActive ? "orange" : "black",
+              fontWeight: "600",
+              fontSize: "15px",
+            })}
+          >
+            My List
           </NavLink>
         </>
       )}
