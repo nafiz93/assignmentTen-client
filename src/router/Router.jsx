@@ -9,12 +9,13 @@ import Listing from '../outlet_Pages/Listing';
 import Registration from '../outlet_Pages/Registration';
 import Details from '../outlet_Pages/Details';
 import Privateroute from '../outlet_Pages/Privateroute';
-import Myorder from '../outlet_Pages/Myorder';
 import Mylisting from '../outlet_Pages/Mylisting';
 import Pets from '../outlet_Pages/Pets';
 import Petcare from '../outlet_Pages/Petcare';
 import Accessories from '../outlet_Pages/Accessories';
 import Petfood from '../outlet_Pages/Petfood';
+import MyOrders from '../outlet_Pages/MyOrders';
+
 
 
 export const router = createBrowserRouter([
@@ -39,12 +40,14 @@ export const router = createBrowserRouter([
       },
       {
         path: "/myorder",
-        element: <Myorder></Myorder>
+        element: <MyOrders></MyOrders>
       },
       {
         path: "/mylist",
         element: <Mylisting></Mylisting>
       },
+
+     
       {
         path: "/login",
         element: <Login></Login>,

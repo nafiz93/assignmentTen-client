@@ -19,7 +19,7 @@ const Listing = () => {
       date: form.date.value.trim(),
     };
 
-     axios.post("http://localhost:3000/listings", listingData)
+     axios.post("http://localhost:5000/listings", listingData)
     .then(res => console.log("POST:", res.data))
     .catch(err => console.error(err));
 

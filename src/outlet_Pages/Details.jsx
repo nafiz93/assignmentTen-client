@@ -55,7 +55,7 @@ const Details = () => {
     });
 
     axios
-      .post("http://localhost:3000/orders", orderData)
+      .post("http://localhost:5000/orders", orderData)
       .then((res) => console.log("ORDER ADDED:", res.data))
       .catch((err) => console.error(err));
 

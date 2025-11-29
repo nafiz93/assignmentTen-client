@@ -1,20 +1,27 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const Card = ({ link }) => {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(`/category/${link}`);
+  };
+
   return (
-    <Link to={`/category/${link}`}>
-      <div className="card bg-base-100 w-96 shadow-sm cursor-pointer hover:shadow-lg transition">
-        <figure className="px-10 pt-10">
-          <img
-            src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-            alt="card"
-            className="rounded-xl"
-          />
-        </figure>
-        <button>view</button>
-      </div>
-    </Link>
+    <motion.div
+      onClick={handleClick}
+      className="cursor-pointer bg-white shadow-lg rounded-lg px-6 py-4 text-center font-semibold"
+      whileHover={{
+        scale: 1.08,
+        y: -10,
+        boxShadow: "0px 8px 20px rgba(0,0,0,0.3)",
+      }}
+      transition={{ type: "spring", stiffness: 200, damping: 10 }}
+    >
+      {link}
+    </motion.div>
   );
 };
 
