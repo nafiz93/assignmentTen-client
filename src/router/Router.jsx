@@ -8,6 +8,8 @@ import Login from '../outlet_Pages/Login';
 import Listing from '../outlet_Pages/Listing';
 import Order from '../outlet_Pages/Order';
 import Registration from '../outlet_Pages/Registration';
+import Details from '../outlet_Pages/Details';
+import Privateroute from '../outlet_Pages/Privateroute';
 
 
 export const router = createBrowserRouter([
@@ -41,6 +43,13 @@ export const router = createBrowserRouter([
       {
         path: "/register",
         element: <Registration></Registration>,
+      },
+     
+      {
+        path: "/listdetails/:id",
+        element:<Privateroute><Details></Details></Privateroute>,
+         loader: ({ params }) =>
+         fetch(`http://localhost:3000/listings/${params.id}`)
       },
     ],
   },

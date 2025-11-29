@@ -61,7 +61,7 @@ const Header = () => {
               fontSize: "15px",
             })}
           >
-            My listing
+            Add listing
           </NavLink>
           <NavLink
             className="mr-4"

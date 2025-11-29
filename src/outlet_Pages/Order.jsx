@@ -1,3 +1,4 @@
+import axios from "axios";
 import React from "react";
 import Swal from "sweetalert2";
 
@@ -21,9 +22,9 @@ const Order = () => {
 
 
 
-
-
-    
+axios.post("http://localhost:3000/orders", orderData)
+    .then(res => console.log("ORDER ADDED:", res.data))
+    .catch(err => console.error(err));
     // -------------------------
     // VALIDATION
     // -------------------------
