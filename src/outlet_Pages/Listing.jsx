@@ -84,7 +84,7 @@ const Listing = () => {
                 <option value="" disabled>
                   Select a category
                 </option>
-                <option> Pets (Adoption)</option>
+                <option> Pets</option>
                 <option> Pet Food</option>
                 <option> Accessories</option>
                 <option> Pet Care Products</option>
