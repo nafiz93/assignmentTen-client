@@ -1,9 +1,9 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../authcontext/AuthContext";
 
 const MyOrders = () => {
-  const { user } = useAuthContext(AuthContext);
+  const { user } = useContext(AuthContext);
   const [myOrders, setMyOrders] = useState([]);
   console.log(myOrders);
 

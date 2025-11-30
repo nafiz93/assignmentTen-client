@@ -15,6 +15,7 @@ import Petcare from '../outlet_Pages/Petcare';
 import Accessories from '../outlet_Pages/Accessories';
 import Petfood from '../outlet_Pages/Petfood';
 import MyOrders from '../outlet_Pages/MyOrders';
+import Editmylisting from '../outlet_Pages/Editmylisting';
 
 
 
@@ -61,35 +62,41 @@ export const router = createBrowserRouter([
         path: "/listdetails/:id",
         element:<Privateroute><Details></Details></Privateroute>,
          loader: ({ params }) =>
-         fetch(`http://localhost:3000/listings/${params.id}`)
+         fetch(`http://localhost:5000/listings/${params.id}`)
+      },
+      {
+        path: "/editlisting/:id",
+        element:<Privateroute><Editmylisting></Editmylisting></Privateroute>,
+         loader: ({ params }) =>
+         fetch(`http://localhost:5000/listings/${params.id}`)
       },
 
      {
   path: "/category/Pets",
   element: <Pets />,
   loader: () =>
-    fetch(`http://localhost:3000/listings/category/Pets`)
+    fetch(`http://localhost:5000/listings/category/Pets`)
 },
 
 {
   path: "/category/Pet Food",
   element: <Petfood />,
   loader: () =>
-    fetch(`http://localhost:3000/listings/category/Pet Food`)
+    fetch(`http://localhost:5000/listings/category/Pet Food`)
 },
 
 {
   path: "/category/Accessories",
   element: <Accessories />,
   loader: () =>
-    fetch(`http://localhost:3000/listings/category/Accessories`)
+    fetch(`http://localhost:5000/listings/category/Accessories`)
 },
 
 {
   path: "/category/Pet Care Products",
   element: <Petcare />,
   loader: () =>
-    fetch(`http://localhost:3000/listings/category/Pet Care Products`)
+    fetch(`http://localhost:5000/listings/category/Pet Care Products`)
 },
 
     ],

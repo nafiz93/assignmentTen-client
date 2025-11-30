@@ -6,7 +6,7 @@ const Supplies = () => {
 
     const [listings,setlistings]=useState([]);
 
-    axios.get("http://localhost:3000/listings")
+    axios.get("http://localhost:5000/listings")
     .then(res => setlistings( res.data))
     .catch(err => console.error(err));
 
