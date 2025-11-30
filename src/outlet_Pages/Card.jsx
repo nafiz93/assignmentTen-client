@@ -12,7 +12,8 @@ const Card = ({ link }) => {
   return (
     <motion.div
       onClick={handleClick}
-      className="cursor-pointer bg-white shadow-lg rounded-lg px-6 py-4 text-center font-semibold"
+      className="cursor-pointer bg-white/30 backdrop-blur-md border border-white/20 
+                 shadow-xl rounded-lg px-6 py-4 text-left font-semibold flex items-start gap-4"
       whileHover={{
         scale: 1.08,
         y: -10,
@@ -20,7 +21,43 @@ const Card = ({ link }) => {
       }}
       transition={{ type: "spring", stiffness: 200, damping: 10 }}
     >
-      {link}
+      {/* Left-Side Image */}
+      {link === "Pet Food" && (
+        <img
+          src="https://i.ibb.co/Z6rKqxr7/image.png"
+          alt=""
+          className="w-20 h-20 object-cover rounded-lg"
+        />
+      )}
+
+      {link === "Pets" && (
+        <img
+          src="https://i.ibb.co/dwMQh1Vd/image.png"
+          alt=""
+          className="w-20 h-20 object-cover rounded-lg"
+        />
+      )}
+
+      {link === "Accessories" && (
+        <img
+          src="https://i.ibb.co/ZRPPskjP/image.png"
+          alt=""
+          className="w-20 h-20 object-cover rounded-lg"
+        />
+      )}
+
+      {link === "Pet Care Products" && (
+        <img
+          src="https://i.ibb.co/fdb1RwDz/image.png"
+          alt=""
+          className="w-20 h-20 object-cover rounded-lg"
+        />
+      )}
+
+      {/* Text */}
+      <div className="flex flex-col justify-center">
+        {link}
+      </div>
     </motion.div>
   );
 };
