@@ -20,9 +20,9 @@ const Home = () => {
       style={{ backgroundImage: `url(${bg_image})` }}
       className="h-screen w-full bg-cover bg-center bg-no-repeat relative"
     >
-      <div className="absolute inset-0 h-full bg-black/20"></div>
-
-      <div className="relative z-10 pt-10 px-4">
+     
+      <div className="relative z-10 pt-2 px-4"> 
+      
         <Swiper
           slidesPerView={3}
           spaceBetween={20}
@@ -30,7 +30,7 @@ const Home = () => {
           autoplay={{
             delay: 1500,
             disableOnInteraction: false,
-              pauseOnMouseEnter: true,   
+            pauseOnMouseEnter: true,
           }}
           loop={true}
           allowTouchMove={false}
@@ -47,6 +47,7 @@ const Home = () => {
             </SwiperSlide>
           ))}
         </Swiper>
+         <h1 className="mb-1 ml-2 text-black text-xl font-bold">Categories</h1>
       </div>
     </div>
   );

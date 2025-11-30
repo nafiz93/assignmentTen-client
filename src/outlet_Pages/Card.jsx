@@ -12,8 +12,17 @@ const Card = ({ link }) => {
   return (
     <motion.div
       onClick={handleClick}
-      className="cursor-pointer bg-white/30 backdrop-blur-md border border-white/20 
-                 shadow-xl rounded-lg px-6 py-4 text-left font-semibold flex items-start gap-4"
+   className="cursor-pointer 
+           bg-white/30 
+           backdrop-blur-md 
+           border border-white/10 
+           shadow-xl 
+           rounded-lg 
+           px-6 py-4 
+           text-left font-semibold 
+           flex items-start gap-4"
+
+
       whileHover={{
         scale: 1.08,
         y: -10,
