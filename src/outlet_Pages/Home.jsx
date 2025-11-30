@@ -47,7 +47,7 @@ const Home = () => {
             </SwiperSlide>
           ))}
         </Swiper>
-         <h1 className="mb-1 ml-2 text-black text-xl font-bold">Categories</h1>
+         <h1 className="mb-1 ml-2 text-white text-xl font-bold">Categories</h1>
       </div>
     </div>
   );

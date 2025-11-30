@@ -72,32 +72,12 @@ export const router = createBrowserRouter([
       },
 
      {
-  path: "/category/Pets",
+  path: "/category/:categoryname",
   element: <Pets />,
-  loader: () =>
-    fetch(`http://localhost:5000/listings/category/Pets`)
+  loader: ({params}) =>
+    fetch(`http://localhost:5000/listings/category/${params.catagoryname}`)
 },
 
-{
-  path: "/category/Pet Food",
-  element: <Petfood />,
-  loader: () =>
-    fetch(`http://localhost:5000/listings/category/Pet Food`)
-},
-
-{
-  path: "/category/Accessories",
-  element: <Accessories />,
-  loader: () =>
-    fetch(`http://localhost:5000/listings/category/Accessories`)
-},
-
-{
-  path: "/category/Pet Care Products",
-  element: <Petcare />,
-  loader: () =>
-    fetch(`http://localhost:5000/listings/category/Pet Care Products`)
-},
 
     ],
   },
