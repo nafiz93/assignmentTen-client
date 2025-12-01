@@ -64,7 +64,7 @@ const Card = ({ link }) => {
       )}
 
       {/* Text */}
-      <div className="flex flex-col justify-center">
+      <div className="flex flex-col justify-center text-gray-600">
         {link}
       </div>
     </motion.div>

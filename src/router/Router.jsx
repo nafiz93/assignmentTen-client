@@ -75,7 +75,7 @@ export const router = createBrowserRouter([
   path: "/category/:categoryname",
   element: <Pets />,
   loader: ({params}) =>
-    fetch(`http://localhost:5000/listings/category/${params.catagoryname}`)
+    fetch(`http://localhost:5000/listings/category/${params.categoryname}`)
 },
 
 

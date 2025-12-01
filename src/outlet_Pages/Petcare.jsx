@@ -1,14 +1,27 @@
-import React, { } from 'react';
+import React from 'react';
 import { useLoaderData } from 'react-router';
+import Petcarecard from './Petcarecard';
+import bg from '../assets/images/pet-food.jpg';
 
 const Petcare = () => {
-    const cards=useLoaderData();
-    console.log('all cards here',cards);
-    return (
-        <div>
-            this is the pet care page
-        </div>
-    );
+  const cards = useLoaderData();
+  console.log("all cards here", cards);
+
+  return (
+    <div
+      className="min-h-screen bg-cover bg-center bg-no-repeat p-10"
+      style={{ backgroundImage: `url(${bg})` }}
+    >
+      {/* Content Box */}
+      <div className="grid grid-cols-3 gap-5 bg-white/70 p-5 rounded-xl backdrop-blur-sm">
+        {
+          cards.map(item => (
+            <Petcarecard key={item._id} item={item} />
+          ))
+        }
+      </div>
+    </div>
+  );
 };
 
 export default Petcare;
