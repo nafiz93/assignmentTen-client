@@ -16,15 +16,15 @@ import Accessories from '../outlet_Pages/Accessories';
 import Petfood from '../outlet_Pages/Petfood';
 import MyOrders from '../outlet_Pages/MyOrders';
 import Editmylisting from '../outlet_Pages/Editmylisting';
+import GeneralError from '../outlet_Pages/GeneralError';
 
 
 
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: (
-      <Root></Root>
-    ),
+    element:  <Root></Root> ,
+    errorElement:<GeneralError></GeneralError>,
 
     children: [
       {
