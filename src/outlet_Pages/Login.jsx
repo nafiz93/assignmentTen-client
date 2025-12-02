@@ -6,10 +6,11 @@ import { GoogleAuthProvider } from "firebase/auth";
 import { Eye, EyeOff } from "lucide-react"; // 👁 import icons
 import Swal from "sweetalert2"; // ✅ added SweetAlert2 import
 import { AuthContext } from "../authcontext/AuthContext";
+import Loading from "./Loading";
 
 const Login = () => {
   
-  const { signinWithGoogle, signin, resetPassword } = useContext(AuthContext);
+  const { signinWithGoogle, signin, resetPassword,loading } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
   const emailref = useRef();

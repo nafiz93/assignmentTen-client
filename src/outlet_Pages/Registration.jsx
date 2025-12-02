@@ -3,9 +3,10 @@ import { Link } from "react-router-dom";
 import { Eye, EyeOff } from "lucide-react";
 import Swal from "sweetalert2";
 import { AuthContext } from "../authcontext/AuthContext";
+import Loading from "./Loading";
 
 const Registration = () => {
-  const { registerUser, updateUserProfile } = useContext(AuthContext);
+  const { registerUser, updateUserProfile,loading } = useContext(AuthContext);
   const [error, seterror] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 

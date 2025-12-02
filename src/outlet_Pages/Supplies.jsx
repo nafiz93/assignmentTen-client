@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import SingleListing from './SingleListing';
 import bg from '../assets/images/pet-food.jpg';
+import Loading from './Loading';
 
 const Supplies = () => {
 
@@ -12,6 +13,8 @@ const Supplies = () => {
       .then(res => setListings(res.data))
       .catch(err => console.error(err));
   }, []);
+
+    if (!listings.length) return <Loading/>;
 
   return (
     <div 

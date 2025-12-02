@@ -19,7 +19,6 @@ const MyOrders = () => {
     }
   }, [user?.email]);
 
-  if (!myOrders.length) return <Loading />;
 
   return (
     <div>
