@@ -22,6 +22,7 @@ const SingleListing = ({ listing }) => {
         </h2>
 
         <p className="text-gray-600">{listing.location}</p>
+        <p className="text-gray-600">Posted On: {listing.date}</p>
 
         <div className="card-actions justify-end mt-2">
           <div className="badge badge-outline text-green-600 font-bold">

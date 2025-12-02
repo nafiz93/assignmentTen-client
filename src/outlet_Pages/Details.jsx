@@ -62,91 +62,106 @@ const Details = () => {
     form.reset();
   };
 
-  return (
-    <div className="card bg-base-100 w-96 shadow-sm">
+ return (
+  <div className="min-h-screen flex items-center justify-center 
+                  bg-white/5 
+                  px-4">
+
+    <div className="card w-[480px] bg-white/60 backdrop-blur-lg 
+                    shadow-2xl rounded-2xl border border-white/30 
+                    p-2">
       <figure>
-        <img
-          src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-          alt="Shoes"
+        <img 
+          src={listDetails.image} 
+          alt={listDetails.name} 
+          className="w-full h-72 object-cover rounded-xl"
         />
       </figure>
 
-      <div className="card-body">
-        <h2 className="card-title">
+      <div className="card-body text-lg">
+        <h2 className="card-title text-2xl font-bold">
           {listDetails.name}
-          <div className="badge badge-secondary">{listDetails.category}</div>
+          <div className="badge bg-rose-500 text-white border-none px-3 py-2">
+            {listDetails.category}
+          </div>
         </h2>
 
         <p>
           <span className="font-semibold">Location:</span> {listDetails.location}
         </p>
+
         <p>
-          <span className="font-semibold">Description:</span>{" "}
-          {listDetails.description}
+          <span className="font-semibold">Description:</span> {listDetails.description}
         </p>
 
-        <div className="card-actions justify-end">
-          <div className="badge badge-outline">${listDetails.price}</div>
+        <div className="card-actions justify-between mt-6">
+          <div className="badge bg-gradient-to-r from-red-700 to-rose-600 
+                          text-white text-lg px-4 py-3 border-none shadow-md">
+            ${listDetails.price}
+          </div>
 
-          <div onClick={openModal} className="badge badge-outline cursor-pointer">
+          <div
+            onClick={openModal}
+            className="badge cursor-pointer bg-white/70 text-rose-600 border border-rose-300 
+                       hover:bg-rose-600 hover:text-white transition px-4 py-3 shadow"
+          >
             Order
           </div>
         </div>
       </div>
+    </div>
 
-      {/* -------------------- */}
-      {/* MODAL START (Checkbox modal) */}
-      {/* -------------------- */}
-      <input type="checkbox" id="order_modal" className="modal-toggle" />
-      <div className="modal">
-        <div className="modal-box max-w-lg">
-          <h3 className="font-bold text-lg mb-4">Place Order</h3>
+    {/* Modal */}
+    <input type="checkbox" id="order_modal" className="modal-toggle" />
+    <div className="modal">
+      <div className="modal-box max-w-lg">
+        <h3 className="font-bold text-lg mb-4">Place Order</h3>
 
-          <form onSubmit={handleSubmit}>
-            <fieldset className="fieldset space-y-2">
-              <label className="label">Product Name</label>
-              <input type="text" name="productName" className="input" />
+        <form onSubmit={handleSubmit}>
+          <fieldset className="fieldset space-y-2">
+            <label className="label">Product Name</label>
+            <input type="text" name="productName" className="input" />
 
-              <label className="label">Buyer Name</label>
-              <input type="text" name="buyerName" className="input" />
+            <label className="label">Buyer Name</label>
+            <input type="text" name="buyerName" className="input" />
 
-              <label className="label">Email</label>
-              <input type="email" name="email" className="input" />
+            <label className="label">Email</label>
+            <input type="email" name="email" className="input" />
 
-              <label className="label">Quantity</label>
-              <input type="number" name="quantity" className="input" min="1" />
+            <label className="label">Quantity</label>
+            <input type="number" name="quantity" className="input" min="1" />
 
-              <label className="label">Price</label>
-              <input type="number" name="price" className="input" min="0" />
+            <label className="label">Price</label>
+            <input type="number" name="price" className="input" min="0" />
 
-              <label className="label">Address</label>
-              <input type="text" name="address" className="input" />
+            <label className="label">Address</label>
+            <input type="text" name="address" className="input" />
 
-              <label className="label">Phone</label>
-              <input type="text" name="phone" className="input" />
+            <label className="label">Phone</label>
+            <input type="text" name="phone" className="input" />
 
-              <label className="label">Date</label>
-              <input type="date" name="date" className="input" />
+            <label className="label">Date</label>
+            <input type="date" name="date" className="input" />
 
-              <label className="label">Notes</label>
-              <textarea name="notes" className="textarea"></textarea>
+            <label className="label">Notes</label>
+            <textarea name="notes" className="textarea"></textarea>
 
-              <button className="btn btn-neutral mt-4">Place Order</button>
-            </fieldset>
-          </form>
+            <button className="btn bg-gradient-to-r from-red-700 to-rose-600 text-white mt-4 w-full">
+              Place Order
+            </button>
+          </fieldset>
+        </form>
 
-          <div className="modal-action">
-            <label htmlFor="order_modal" className="btn">
-              Close
-            </label>
-          </div>
+        <div className="modal-action">
+          <label htmlFor="order_modal" className="btn">Close</label>
         </div>
       </div>
-      {/* -------------------- */}
-      {/* MODAL END */}
-      {/* -------------------- */}
     </div>
-  );
+  </div>
+);
+
+
+
 };
 
 export default Details;
