@@ -1,25 +1,33 @@
 import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../authcontext/AuthContext";
+import Loading from "./Loading";
+import Singleorder from "./Singleorder";
 
 const MyOrders = () => {
   const { user } = useContext(AuthContext);
   const [myOrders, setMyOrders] = useState([]);
-  console.log(myOrders);
 
   useEffect(() => {
     if (user?.email) {
       axios
         .get(`http://localhost:5000/orders/user?email=${user.email}`)
         .then(res => {
-          console.log("MY ORDERS:", res.data);
           setMyOrders(res.data);
         })
         .catch(err => console.error(err));
     }
   }, [user?.email]);
 
-  return <div>{/* show orders here */}</div>;
+  if (!myOrders.length) return <Loading />;
+
+  return (
+    <div>
+      {myOrders.map(myOrder => (
+        <Singleorder key={myOrder._id} myOrder={myOrder} />
+      ))}
+    </div>
+  );
 };
 
 export default MyOrders;
